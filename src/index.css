@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -23,17 +25,28 @@ body {
   max-width: 1440px;
 }
 
+.name-title {
+  font-size: 48px;
+  font-family: "Playfair Display", serif;
+}
+
 .contact-button {
-  font-weight: 300;
   padding: 10px 20px;
   border-radius: 980px;
-  border: 2px solid transparent;
+  border: 2px solid var(--primary-blue-color);
   font-size: 16px;
-  color: #fff;
-  background-color: var(--primary-blue-color);
+  color: var(--primary-blue-color);
+  background-color: transparent;
   cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.contact-button:hover {
+  color: var(--primary-white-background-color);
+  background-color: var(--primary-blue-color);
 }
 
 .contact-button:active {
   background-color: var(--darker-blue-color);
+  transform: scale(0.98);
 }
