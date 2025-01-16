@@ -1,4 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+  color: var(--primary-black-text-color);
+}
+
+:root {
+  --primary-black-text-color: #1d1d1f;
+  --primary-white-background-color: #f5f5f7;
+  --primary-blue-color: #0076DF;
+  --darker-blue-color: #006EDB;
+}
+
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  background-color: #f5f5f7;
+  background-color: var(--primary-white-background-color);
+}
+
+.whole-app-container {
+  margin: 36px auto;
+  max-width: 1440px;
+}
+
+.contact-button {
+  font-weight: 300;
+  padding: 10px 20px;
+  border-radius: 980px;
+  border: 2px solid transparent;
+  font-size: 16px;
+  color: #fff;
+  background-color: var(--primary-blue-color);
+  cursor: pointer;
+}
+
+.contact-button:active {
+  background-color: var(--darker-blue-color);
 }
