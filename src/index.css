@@ -10,14 +10,29 @@
 
 :root {
   --primary-black-color: #1d1d1f;
-  --primary-white-background-color: #f5f5f7;
+  --primary-white-color: #f5f5f7;
   --primary-blue-color: #0076DF;
   --darker-blue-color: #006EDB;
+  --primary-green-color: #34c759;
 }
 
 body {
-  background-color: var(--primary-white-background-color);
+  background-color: var(--primary-white-color);
   color: var(--primary-black-color);
+}
+
+body.dark-theme {
+  color: var(--primary-white-color);
+  background-color: var(--primary-black-color);
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-black-color);
+}
+
+body.dark-theme a {
+  color: var(--primary-white-color);
 }
 
 .whole-app-container {
@@ -42,8 +57,12 @@ body {
 }
 
 .contact-button:hover {
-  color: var(--primary-white-background-color);
+  color: var(--primary-white-color);
   background-color: var(--primary-blue-color);
+}
+
+body.dark-theme .contact-button:hover {
+  color: var(--primary-black-color);
 }
 
 .contact-button:active {

@@ -33,5 +33,5 @@
 }
 
 .header-container ul.segment-control li.option.active {
-  background-color: var(--primary-white-background-color);
+  background-color: var(--primary-white-color);
 }
