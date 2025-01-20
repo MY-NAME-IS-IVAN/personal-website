@@ -11,13 +11,13 @@
   -webkit-text-fill-color: transparent;
 }
 
-
 .header-container ul.segment-control {
   display: flex;
   list-style-type: none;
   background-color: rgba(0, 0, 0, 0.05);
   border-radius: 980px;
   padding: 4px;
+  transition: background-color 0.25s ease;
 }
 
 .header-container ul.segment-control li.option {
@@ -34,4 +34,12 @@
 
 .header-container ul.segment-control li.option.active {
   background-color: var(--primary-white-color);
+}
+
+body.dark-theme ul.segment-control {
+  background-color: var(--segment-control-black-background);
+}
+
+body.dark-theme .header-container ul.segment-control li.option.active {
+  background-color: var(--segment-control-black-active);
 }

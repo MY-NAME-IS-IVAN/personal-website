@@ -1,7 +1,18 @@
-const ContactButton = () => {
-  return (
-    <button className='contact-button'>Contact</button>
-  )
-}
+import { any } from 'prop-types';
 
-export default ContactButton
+const ContactButton = ({ setIsContactFormOpen }) => {
+  return (
+    <button
+      className='contact-button'
+      onClick={() => setIsContactFormOpen(true)}
+    >
+      Contact
+    </button>
+  );
+};
+
+ContactButton.propTypes = {
+  setIsContactFormOpen: any,
+};
+
+export default ContactButton;

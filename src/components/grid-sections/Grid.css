@@ -117,6 +117,9 @@
 .grid-container .grid-item.github {
   color: var(--primary-white-color);
   background-color: var(--primary-black-color);
+  transition: color 0.25s ease, background-color 0.25s ease,
+    transform 0.3s cubic-bezier(0, 0, 0.5, 1),
+    box-shadow 0.3s cubic-bezier(0, 0, 0.5, 1);
 }
 
 .grid-container .grid-item.linkedin {

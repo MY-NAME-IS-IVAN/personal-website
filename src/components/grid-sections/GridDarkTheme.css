@@ -1,0 +1,28 @@
+body.dark-theme .grid-item {
+  background-color: var(--grid-black-color);
+}
+
+body.dark-theme .grid-item.github {
+  background-color: var(--grid-black-color);
+}
+
+body.dark-theme .grid-item.project .secondary-text {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+body.dark-theme .grid-container .about-myself .face-toggle:hover {
+  color: var(--grid-black-color);
+}
+
+body.dark-theme .grid-container .about-myself .face-toggle:disabled {
+  color: var(--primary-blue-color);
+}
+
+body.dark-theme .grid-container .grid-item.my-location .zoom-buttons button {
+  background-color: var(--grid-black-color);
+}
+
+body.dark-theme .grid-container .grid-item.my-location .zoom-buttons button:hover {
+  color: var(--grid-black-color);
+  background-color: var(--primary-blue-color);
+}

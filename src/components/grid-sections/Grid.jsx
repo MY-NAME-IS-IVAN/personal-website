@@ -1,4 +1,7 @@
 import './Grid.css';
+import './GridDarkTheme.css';
+
+import { useState } from 'react';
 
 import AboutMyself from './AboutMyself';
 import Github from './Github';
@@ -30,60 +33,64 @@ import GamePicture from '../../assets/projects-pictures/Game.jpg';
 import MoodCompanion from '../../assets/projects-pictures/MoodCompanion.jpg';
 
 const Grid = () => {
+  const [isDarkTheme, setIsDarkTheme] = useState(false);
+
   return (
-    <div className='grid-container all'>
-      <AboutMyself />
-      <Project
-        title='Published Game'
-        projectImage={GamePicture}
-        projectLink='https://store.playstation.com/en-us/product/UP6537-CUSA32521_00-9855650559742112'
-        technologiesIcons={[
-          <FaUnity key={'unity'} />,
-          <TbBrandCSharp key={'csharp'} />,
-          <SiAdobephotoshop key={'photoshop'} />,
-        ]}
-      />
-      <Project
-        title='Stoicism History'
-        projectImage={StoicismPicture}
-        projectLink='https://github.com/MY-NAME-IS-IVAN/Stoicism'
-        technologiesIcons={[
-          <FaReact key={'react'} />,
-          <FaJs key={'javascript'} />,
-          <FaCss3 key={'css'} />,
-          <FaHtml5 key={'html'} />,
-        ]}
-      />
-      <IBMCertificate />
-      <MyLocation />
-      <Github />
-      <LinkedIn />
-      <Instagram />
-      <Toggle />
-      <Project
-        title='Dead Cells Website'
-        projectImage={DeadCells}
-        isHorizontal={true}
-        projectLink='https://github.com/MY-NAME-IS-IVAN/dead-cells-website-clone'
-        technologiesIcons={[
-          <FaReact key={'react'} />,
-          <FaJs key={'javascript'} />,
-          <FaCss3 key={'css'} />,
-          <FaHtml5 key={'html'} />,
-        ]}
-      />
-      <Project
-        title='Mood Companion'
-        projectImage={MoodCompanion}
-        isHorizontal={true}
-        projectLink='https://t.me/mental_companion_bot'
-        technologiesIcons={[
-          <FaPython key={'python'} />,
-          <AiFillOpenAI key={'openAI'} />,
-          <FaTelegram key={'telegram'} />,
-        ]}
-      />
-    </div>
+    <>
+      <div className='grid-container all'>
+        <AboutMyself />
+        <Project
+          title='Published Game'
+          projectImage={GamePicture}
+          projectLink='https://store.playstation.com/en-us/product/UP6537-CUSA32521_00-9855650559742112'
+          technologiesIcons={[
+            <FaUnity key={'unity'} title='Unity' />,
+            <TbBrandCSharp key={'csharp'} title='C#' />,
+            <SiAdobephotoshop key={'photoshop'} title='Photoshop' />,
+          ]}
+        />
+        <Github />
+        <Toggle isDarkTheme={isDarkTheme} setIsDarkTheme={setIsDarkTheme} />
+        <LinkedIn />
+        <Project
+          title='Stoicism History'
+          projectImage={StoicismPicture}
+          projectLink='https://github.com/MY-NAME-IS-IVAN/Stoicism'
+          technologiesIcons={[
+            <FaReact key={'react'} title='React' />,
+            <FaJs key={'javascript'} title='JavaScript' />,
+            <FaCss3 key={'css'} title='CSS' />,
+            <FaHtml5 key={'html'} title='HTML' />,
+          ]}
+        />
+        <MyLocation isDarkTheme={isDarkTheme} />
+        <Instagram />
+        <Project
+          title='Mood Companion'
+          projectImage={MoodCompanion}
+          isHorizontal={true}
+          projectLink='https://t.me/mental_companion_bot'
+          technologiesIcons={[
+            <FaPython key={'python'} title='Python' />,
+            <AiFillOpenAI key={'openAI'} title='OpenAI' />,
+            <FaTelegram key={'telegram'} title='Telegram' />,
+          ]}
+        />
+        <Project
+          title='Dead Cells Website'
+          projectImage={DeadCells}
+          isHorizontal={true}
+          projectLink='https://github.com/MY-NAME-IS-IVAN/dead-cells-website-clone'
+          technologiesIcons={[
+            <FaReact key={'react'} title='React' />,
+            <FaJs key={'javascript'} title='JavaScript' />,
+            <FaCss3 key={'css'} title='CSS' />,
+            <FaHtml5 key={'html'} title='HTML' />,
+          ]}
+        />
+        <IBMCertificate />
+      </div>
+    </>
   );
 };
 

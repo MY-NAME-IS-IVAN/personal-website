@@ -1,0 +1,100 @@
+.contact-overlay form {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 30px;
+  padding: 30px;
+  border-radius: 20px;
+  background-color: var(--primary-white-color);
+}
+
+.contact-overlay form .form-row {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: var(--primary-black-color);
+  font-size: 20px;
+}
+
+.contact-overlay form button.submit-message {
+  align-self: center;
+  padding: 10px 20px;
+  border-radius: 980px;
+  border: 2px solid var(--primary-blue-color);
+  font-size: 16px;
+  color: var(--primary-blue-color);
+  background-color: transparent;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.contact-overlay form button.submit-message:hover {
+  color: var(--primary-white-color);
+  background-color: var(--primary-blue-color);
+}
+
+.contact-overlay form label {
+  font-weight: 700;
+}
+
+.contact-overlay form input,
+.contact-overlay form textarea {
+  width: 100%;
+  padding: 15px 20px;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  outline: none;
+}
+
+.contact-overlay form textarea {
+  resize: none;
+  height: 150px;
+}
+
+.contact-overlay .close-form {
+  position: absolute;
+  left: 0;
+  top: 0;
+  border: none;
+  font-size: 48px;
+  margin: 20px;
+  cursor: pointer;
+  color: var(--primary-white-color);
+  background-color: var(--primary-black-color);
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.contact-overlay .close-form:hover {
+  color: var(--primary-black-color);
+  background-color: var(--primary-white-color);
+}
+
+body.dark-theme .contact-overlay .close-form {
+  color: var(--primary-black-color);
+  background-color: var(--primary-white-color);
+}
+
+body.dark-theme .contact-overlay .close-form:hover {
+  color: var(--primary-white-color);
+  background-color: var(--primary-black-color);
+}
+
+body.dark-theme .contact-overlay form {
+  background-color: var(--primary-black-color);
+}
+
+body.dark-theme .contact-overlay form .form-row {
+  color: var(--primary-white-color);
+}
+
+body.dark-theme .contact-overlay form input,
+body.dark-theme .contact-overlay form textarea {
+  color: var(--primary-white-color);
+  caret-color: var(--primary-white-color);
+  background-color: var(--grid-black-color);
+}
