@@ -14,7 +14,7 @@
 .header-container ul.segment-control {
   display: flex;
   list-style-type: none;
-  background-color: rgba(0, 0, 0, 0.05);
+  background-color: rgb(232, 232, 234);
   border-radius: 980px;
   padding: 4px;
   transition: background-color 0.25s ease;

@@ -1,20 +1,11 @@
-import { useEffect } from 'react';
 import { any } from 'prop-types';
 
-const Toggle = ({ isDarkTheme, setIsDarkTheme }) => {
-  useEffect(() => {
-    if (isDarkTheme) {
-      document.body.classList.add('dark-theme');
-    } else {
-      document.body.classList.remove('dark-theme');
-    }
-  }, [isDarkTheme]);
-
+const Toggle = ({ changeTheme, isDarkTheme }) => {
   return (
     <div className='grid-item theme-toggle-item'>
       <div
         className={`theme-toggle ${isDarkTheme ? 'active' : ''}`}
-        onClick={() => setIsDarkTheme(!isDarkTheme)}
+        onClick={() => changeTheme()}
       >
         <div className='thumb'></div>
       </div>
@@ -23,8 +14,8 @@ const Toggle = ({ isDarkTheme, setIsDarkTheme }) => {
 };
 
 Toggle.propTypes = {
+  changeTheme: any,
   isDarkTheme: any,
-  setIsDarkTheme: any,
 };
 
 export default Toggle;

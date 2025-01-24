@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { GoogleMap, LoadScript } from '@react-google-maps/api';
+import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
 
 import FaceIcon from '../../assets/face-map-icon.png';
 import { FaPlus, FaMinus } from 'react-icons/fa';
@@ -251,6 +251,10 @@ const MyLocation = ({ isDarkTheme }) => {
   const handleZoomIn = () => setZoom((prev) => Math.min(prev + 3, maxZoom));
   const handleZoomOut = () => setZoom((prev) => Math.max(prev - 3, minZoom));
 
+  const { isLoaded } = useJsApiLoader({
+    googleMapsApiKey: import.meta.env.VITE_GOOGLE_MAPS_API_KEY,
+  });
+
   function getMapStyles() {
     return isDarkTheme ? darkMapStyles : lightMapStyles;
   }
@@ -266,19 +270,18 @@ const MyLocation = ({ isDarkTheme }) => {
     disableDoubleClickZoom: true,
   };
 
+  if (!isLoaded) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <div className='grid-item my-location'>
-      <LoadScript
-        googleMapsApiKey={import.meta.env.VITE_GOOGLE_MAPS_API_KEY}
-        className='map-display'
-      >
-        <GoogleMap
-          mapContainerStyle={containerStyle}
-          center={initialCenter}
-          zoom={zoom}
-          options={mapOptions}
-        />
-      </LoadScript>
+      <GoogleMap
+        mapContainerStyle={containerStyle}
+        center={initialCenter}
+        zoom={zoom}
+        options={mapOptions}
+      />
       <div className='face-map-icon-container'>
         <img src={FaceIcon} alt='' className='face-map-icon' />
       </div>

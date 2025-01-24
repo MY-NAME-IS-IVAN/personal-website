@@ -1,0 +1,158 @@
+.about-project-container {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 600px;
+  gap: 48px;
+}
+
+.about-project-container .project-title {
+  font-size: 64px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.about-project-container .project-subtitle,
+.about-project-container .build-with-text {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.about-project-container .technologies-list {
+  margin-top: 12px;
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  font-size: 48px;
+}
+
+.about-project-container .project-decsription {
+  font-size: 20px;
+}
+
+.about-project-container .image-slider-container {
+  position: relative;
+  width: 100%;
+  height: 350px;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.about-project-container .images-list {
+  width: 100%;
+  height: 100%;
+  list-style-type: none;
+}
+
+.about-project-container .images-list li {
+  width: 100%;
+  height: 100%;
+}
+
+.about-project-container .images-list li.hidden {
+  display: none;
+}
+
+.about-project-container .images-list img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-project-container .controls {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.about-project-container .dots {
+  display: flex;
+  justify-content: center;
+  align-self: flex-end;
+  margin: 10px;
+  gap: 12px;
+}
+
+.about-project-container .dots .dot {
+  display: block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.about-project-container .dots .dot:hover,
+.about-project-container .dots .dot.active {
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.about-project-container .controls .button {
+  width: 36px;
+  height: 36px;
+  font-size: 24px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+}
+
+.about-project-container .controls .button.left {
+  rotate: 180deg;
+}
+
+.about-project-container .controls .button:hover {
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.about-project-container .back-button {
+  position: absolute;
+  left: 0;
+  top: 0;
+  rotate: 180deg;
+  font-size: 36px;
+  margin: 10px;
+  width: 48px;
+  height: 48px;
+  color: var(--primary-white-color);
+  background: var(--primary-black-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  box-shadow: 2px 4px 12px #00000014;
+  cursor: pointer;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.about-project-container .back-button:hover {
+  color: var(--primary-black-color);
+  background: var(--primary-white-color);
+}
+
+body.dark-theme .about-project-container .back-button {
+  color: var(--primary-black-color);
+  background-color: var(--primary-white-color);
+}
+
+body.dark-theme .about-project-container .back-button:hover {
+  color: var(--primary-white-color);
+  background-color: var(--primary-black-color);
+}
+
+body.dark-theme .about-project-container .controls .button {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+body.dark-theme .about-project-container .controls .button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}

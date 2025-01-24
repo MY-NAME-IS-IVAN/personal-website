@@ -20,6 +20,8 @@
 }
 
 body {
+  background: url('./assets/background.svg');
+  background-size: 80px;
   background-color: var(--primary-white-color);
   color: var(--primary-black-color);
   transition: background-color 0.25s ease, color 0.25s ease;
@@ -27,6 +29,8 @@ body {
 
 body.dark-theme {
   color: var(--primary-white-color);
+  background: url('./assets/background-dark-theme.svg');
+  background-size: 80px;
   background-color: var(--primary-black-color);
 }
 
@@ -55,7 +59,7 @@ body.dark-theme a {
   border: 2px solid var(--primary-blue-color);
   font-size: 16px;
   color: var(--primary-blue-color);
-  background-color: transparent;
+  background-color: var(--primary-white-color);
   cursor: pointer;
   transition: background-color 0.15s ease, color 0.15s ease;
 }
@@ -65,8 +69,13 @@ body.dark-theme a {
   background-color: var(--primary-blue-color);
 }
 
+body.dark-theme .contact-button {
+  background-color: var(--primary-black-color);
+}
+
 body.dark-theme .contact-button:hover {
   color: var(--primary-black-color);
+  background-color: var(--primary-blue-color);
 }
 
 .contact-button:active {
@@ -98,6 +107,73 @@ body.dark-theme .contact-button:hover {
   display: none;
 }
 
+.about-project-button,
+.view-project-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1;
+  border-radius: 980px;
+  border: 2px solid var(--primary-blue-color);
+  font-size: 16px;
+  color: var(--primary-blue-color);
+  background-color: transparent;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
+}
+
 .about-project-button {
-  
+  border: 2px solid var(--primary-blue-color);
+  color: var(--primary-white-color);
+  background-color: var(--primary-blue-color);
+}
+
+.view-project-button {
+  border: 2px solid transparent;
+}
+
+body.dark-theme .view-project-button {
+  color: var(--primary-blue-color);
+}
+
+.view-project-button:hover {
+  border: 2px solid var(--primary-blue-color);
+}
+
+.project-buttons-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.project-buttons-container.center {
+  align-items: center;
+}
+
+.project-buttons-container.left {
+  align-items: flex-start;
+}
+
+@media (max-width: 1340px) {
+  .whole-app-container {
+    margin: 36px auto;
+    max-width: 1000px;
+  }
+}
+
+@media (max-width: 1080px) {
+  .whole-app-container {
+    margin: 36px auto;
+    max-width: 700px;
+  }
+}
+
+@media (max-width: 785px) {
+  .whole-app-container {
+    margin: 36px auto;
+    max-width: 500px;
+  }
 }

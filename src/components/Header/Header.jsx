@@ -1,13 +1,10 @@
 import './Header.css';
 
-import { useState } from 'react';
 import ContactButton from '../ContactButton';
 
 import { any } from 'prop-types';
 
-const Header = ({ setIsContactFormOpen }) => {
-  const [segmentOption, setSegmentOption] = useState('all');
-
+const Header = ({ setIsContactFormOpen, segmentOption, setSegmentOption }) => {
   return (
     <div className='header-container'>
       <p className='name-title'>Ivan</p>
@@ -44,6 +41,8 @@ const Header = ({ setIsContactFormOpen }) => {
 
 Header.propTypes = {
   setIsContactFormOpen: any,
+  segmentOption: any,
+  setSegmentOption: any,
 };
 
 export default Header;

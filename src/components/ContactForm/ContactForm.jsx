@@ -27,17 +27,19 @@ const ContactForm = ({ isContactFormOpen, setIsContactFormOpen }) => {
       .then(
         () => {
           alert('The message was sent successfully!');
+
+          setName('');
+          setEmail('');
+          setMessage('');
+          setIsContactFormOpen(false);
         },
         (error) => {
-          alert("Something went wrong... The message wasn't sent");
+          alert(
+            'Something went wrong... You can contact me through this email: ivan.lordofdonuts@gmail.com'
+          );
           console.log('FAILED...', error.text);
         }
       );
-
-    setName('');
-    setEmail('');
-    setMessage('');
-    setIsContactFormOpen(false);
   };
   return (
     <div

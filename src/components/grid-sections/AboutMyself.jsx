@@ -58,11 +58,11 @@ const AboutMyself = () => {
       </div>
       <div className='text-container'>
         <p className='summary-text'>
-          Hi, I&apos;m <span className='name-title'>Ivan</span>. An ambitious
+          Hi, I&apos;m <span className='name-title'>Ivan</span>. Ambitious
           software developer with passion for learning new technologies and
-          adapting to new ways to create engaging digital experiences. Skilled
+          adapting to new ways to create digital systems and services. Skilled
           in front-end development with an interest in creating immersive
-          applications. Committed to keep growing as a developer and make a good
+          applications. Dedicated to keep growing as a developer and make a good
           impact on humanity with technologies.
         </p>
       </div>

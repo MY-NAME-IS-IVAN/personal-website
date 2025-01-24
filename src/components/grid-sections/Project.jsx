@@ -1,21 +1,31 @@
 import PropTypes from 'prop-types';
+import ProjectButtons from '../ProjectButtons';
 
 const Project = ({
   title,
   projectImage,
-  projectLink,
   technologiesIcons,
   isHorizontal = false,
+  projectPagePath = '/',
+  projectLink,
 }) => {
   const technologies = technologiesIcons.map((icon, index) => {
     return <li key={index}>{icon}</li>;
   });
 
+  function CurrentProjectButtons() {
+    return (
+      <ProjectButtons
+        isHorizontal={isHorizontal}
+        projectPagePath={projectPagePath}
+        projectLink={projectLink}
+      />
+    );
+  }
+
   return (
-    <a
-      href={projectLink}
-      target='_blank'
-      className={`grid-item grid-link project ${
+    <div
+      className={`grid-item project ${
         isHorizontal ? 'horizontal' : ''
       }`}
     >
@@ -28,20 +38,23 @@ const Project = ({
           <p className='secondary-text'>BUILD WITH</p>
           <ul className='technologies-list'>{technologies}</ul>
         </div>
+        {isHorizontal && <CurrentProjectButtons />}
       </div>
       <div className='pciture-container'>
         <img src={projectImage} alt='' />
       </div>
-    </a>
+      {!isHorizontal && <CurrentProjectButtons />}
+    </div>
   );
 };
 
 Project.propTypes = {
   title: PropTypes.string.isRequired,
   projectImage: PropTypes.string.isRequired,
-  projectLink: PropTypes.string.isRequired,
   technologiesIcons: PropTypes.array.isRequired,
   isHorizontal: PropTypes.bool,
+  projectPagePath: PropTypes.string.isRequired,
+  projectLink: PropTypes.string.isRequired,
 };
 
 export default Project;
