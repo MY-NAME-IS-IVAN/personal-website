@@ -156,3 +156,38 @@ body.dark-theme .about-project-container .controls .button {
 body.dark-theme .about-project-container .controls .button:hover {
   background-color: rgba(0, 0, 0, 0.8);
 }
+
+@media (max-width: 865px) {
+  .about-project-container {
+    gap: 24px;
+    width: 400px;
+  }
+
+  .about-project-container .project-title {
+    font-size: 48px;
+    margin-bottom: 8px;
+  }
+}
+
+@media (max-width: 565px) {
+  .about-project-container {
+    width: 300px;
+  }
+
+  .about-project-container .project-subtitle,
+  .about-project-container .build-with-text {
+    font-size: 20px;
+  }
+
+  .about-project-container .technologies-list {
+    gap: 8px;
+    font-size: 32px;
+  }
+}
+
+
+@media (max-width: 450px) {
+  .about-project-container {
+    margin-top: 96px;
+  }
+}

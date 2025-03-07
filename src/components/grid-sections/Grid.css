@@ -54,13 +54,13 @@
 }
 
 .grid-container .about-myself .text-container {
-  flex: 1;
+  flex-grow: 1;
   display: flex;
   align-items: center;
 }
 
 .grid-container .about-myself .picture-container {
-  flex: 1;
+  flex-grow: 1;
   display: flex;
   justify-content: space-between;
   align-items: start;
@@ -121,10 +121,6 @@
   cursor: default;
 }
 
-.grid-container .about-myself .face-picture {
-  height: 90%;
-}
-
 .grid-container .grid-item.github {
   color: var(--primary-white-color);
   background-color: var(--primary-black-color);
@@ -138,7 +134,7 @@
   background-color: var(--primary-blue-color);
 }
 
-.grid-container:not(.all, .media) .grid-item.linkedin {
+.grid-container:not(.all, .about, .media) .grid-item.linkedin {
   opacity: 0.4;
   filter: brightness(70%);
 }
@@ -204,9 +200,11 @@
 }
 
 .grid-container .grid-item.ibm {
-  grid-row: span 1;
-  grid-column: span 2;
+  grid-row: span 2;
+  grid-column: span 1;
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   gap: 24px;
 }
 
@@ -221,12 +219,12 @@
 }
 
 .grid-container .grid-item.ibm .right {
-  width: 100%;
   height: 100%;
+  width: 100%;
 }
 
 .grid-container .grid-item.ibm .right img {
-  height: 100%;
+  width: 100%;
   border-radius: 15px;
 }
 
@@ -405,48 +403,87 @@
     grid-column-gap: 16px;
     grid-row-gap: 16px;
   }
+
+  .grid-item {
+    padding: 24px;
+  }
+
+  .grid-container .grid-item.project .pciture-container {
+    margin: 20px 0;
+  }
+
+  .grid-container .about-myself .face-picture {
+    height: 200px;
+  }
+
+  .grid-container .grid-icon {
+    font-size: 96px;
+  }
+  
+  .grid-container .grid-item.project .title {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .grid-container .grid-item.project .technologies-list {
+    font-size: 18px;
+  }
 }
 
 @media (max-width: 1080px) {
   .grid-container {
     width: 700px;
     grid-template-columns: repeat(2, 342px);
-    grid-template-rows: repeat(11, 342px);
+    grid-template-rows: repeat(10, 342px);
+  }
+
+  .grid-item {
+    padding: 36px;
+  }
+
+  .grid-container .grid-icon {
+    font-size: 128px;
+  }
+
+  .grid-container .grid-item.project .pciture-container {
+    margin: 40px 0;
+  }
+
+  .grid-container .about-myself .face-picture {
+    height: 300px;
   }
 }
 
 @media (max-width: 785px) {
   .grid-container {
-    display: grid;
-    width: 500px;
-    grid-template-columns: repeat(1, 342px);
-    grid-template-rows: repeat(20, 342px);
-  }
-
-  .grid-container .about-myself {
-    grid-row: span 1;
-    grid-column: span 1;
-  }
-
-  .grid-container .grid-item.ibm {
-    grid-row: span 2;
-    grid-column: span 1;
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    width: 500px;
   }
 
-  .grid-container .grid-item.project.horizontal {
-    grid-row: span 1;
-    grid-column: span 1;
-    flex-direction: row;
-    justify-content: space-between;
+  .grid-item {
+    height: auto;
   }
 
-  .grid-container .grid-item.my-location {
-    padding: 0;
-    grid-column: span 1;
-    position: relative;
-    overflow: hidden;
+  .grid-container .about-myself .face-picture {
+    height: 250px;
+  }
+
+  .grid-container .about-myself .picture-container {
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 550px) {
+  .grid-container {
+    width: 300px;
+  }
+
+  .grid-container .about-myself .picture-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 48px;
   }
 }

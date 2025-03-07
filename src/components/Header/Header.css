@@ -43,3 +43,17 @@ body.dark-theme ul.segment-control {
 body.dark-theme .header-container ul.segment-control li.option.active {
   background-color: var(--segment-control-black-active);
 }
+
+@media (max-width: 785px) {
+  .header-container .name-title {
+    display: none;
+  }
+}
+
+@media (max-width: 550px) {
+  .header-container {
+    flex-direction: column;
+    gap: 32px;
+    margin-bottom: 48px;
+  }
+}

@@ -1,6 +1,8 @@
 import './Grid.css';
 import './GridDarkTheme.css';
 
+import { useState, useEffect } from 'react';
+
 import AboutMyself from './AboutMyself';
 import Github from './Github';
 import LinkedIn from './LinkedIn';
@@ -33,6 +35,23 @@ import GamePicture from '../../assets/projects-pictures/Game.jpg';
 import MoodCompanion from '../../assets/projects-pictures/MoodCompanion.jpg';
 
 const Grid = ({ changeTheme, isDarkTheme, segmentOption }) => {
+  const [canBeHorizontal, setCanBeHorizontal] = useState(true);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 785) {
+        setCanBeHorizontal(true);
+      } else {
+        setCanBeHorizontal(false);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    handleResize();
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   function GameProject() {
     return (
       <Project
@@ -72,8 +91,8 @@ const Grid = ({ changeTheme, isDarkTheme, segmentOption }) => {
         title='Mood Companion'
         projectImage={MoodCompanion}
         projectPagePath='/mood-companion'
-        isHorizontal={true}
-        projectLink='https://t.me/mental_companion_bot'
+        isHorizontal={canBeHorizontal ? true : false}
+        projectLink='https://t.me/mood_companion_bot'
         technologiesIcons={[
           <FaPython key={'python'} title='Python' />,
           <AiFillOpenAI key={'openAI'} title='OpenAI' />,
@@ -89,7 +108,7 @@ const Grid = ({ changeTheme, isDarkTheme, segmentOption }) => {
         title='Dead Cells Website'
         projectImage={DeadCells}
         projectPagePath='/dead-cells'
-        isHorizontal={true}
+        isHorizontal={canBeHorizontal ? true : false}
         projectLink='https://github.com/MY-NAME-IS-IVAN/dead-cells-website-clone'
         technologiesIcons={[
           <FaReact key={'react'} title='React' />,
@@ -121,12 +140,12 @@ const Grid = ({ changeTheme, isDarkTheme, segmentOption }) => {
         <Github />
         <ToggleElement />
         <StoicismProject />
+        <IBMCertificate />
         <LinkedIn />
-        <MyLocationElement />
         <Instagram />
+        <MyLocationElement />
         <MoodCompanionProject />
         <DeadCellsProject />
-        <IBMCertificate />
       </div>
       <div
         className={`grid-container about ${
@@ -134,10 +153,10 @@ const Grid = ({ changeTheme, isDarkTheme, segmentOption }) => {
         }`}
       >
         <AboutMyself />
-        <MyLocationElement />
         <IBMCertificate />
         <Github />
         <LinkedIn />
+        <MyLocationElement />
         <Instagram />
         <ToggleElement />
         <GameProject />
@@ -155,12 +174,12 @@ const Grid = ({ changeTheme, isDarkTheme, segmentOption }) => {
         <MoodCompanionProject />
         <DeadCellsProject />
         <Github />
+        <Instagram />
         <AboutMyself />
+        <IBMCertificate />
         <ToggleElement />
         <LinkedIn />
-        <Instagram />
         <MyLocationElement />
-        <IBMCertificate />
       </div>
       <div
         className={`grid-container media ${
@@ -170,6 +189,7 @@ const Grid = ({ changeTheme, isDarkTheme, segmentOption }) => {
         <LinkedIn />
         <Instagram />
         <Github />
+        <IBMCertificate />
         <ToggleElement />
         <AboutMyself />
         <GameProject />
@@ -177,7 +197,6 @@ const Grid = ({ changeTheme, isDarkTheme, segmentOption }) => {
         <MyLocationElement />
         <MoodCompanionProject />
         <DeadCellsProject />
-        <IBMCertificate />
       </div>
     </>
   );

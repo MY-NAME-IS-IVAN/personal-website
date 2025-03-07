@@ -1,3 +1,27 @@
+.contact-overlay {
+  z-index: 100;
+  position: fixed;
+  width: 100vw;
+  min-height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(12px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+}
+
+.contact-overlay.active {
+  opacity: 1;
+}
+
+.contact-overlay.hidden {
+  opacity: 0;
+  display: none;
+}
+
 .contact-overlay form {
   width: 400px;
   display: flex;
@@ -97,4 +121,18 @@ body.dark-theme .contact-overlay form textarea {
   color: var(--primary-white-color);
   caret-color: var(--primary-white-color);
   background-color: var(--grid-black-color);
+}
+
+@media (max-width: 450px) {
+  .contact-overlay {
+    background-color: var(--primary-white-color);
+  }
+
+  body.dark-theme .contact-overlay {
+    background-color: var(--primary-black-color);
+  }
+
+  .contact-overlay form {
+    width: 100%;
+  }
 }

@@ -83,30 +83,6 @@ body.dark-theme .contact-button:hover {
   transform: scale(0.98);
 }
 
-.contact-overlay {
-  z-index: 100;
-  position: fixed;
-  width: 100vw;
-  min-height: 100vh;
-  top: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(12px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-}
-
-.contact-overlay.active {
-  opacity: 1;
-}
-
-.contact-overlay.hidden {
-  opacity: 0;
-  display: none;
-}
-
 .about-project-button,
 .view-project-button {
   display: flex;
@@ -159,21 +135,24 @@ body.dark-theme .view-project-button {
 
 @media (max-width: 1340px) {
   .whole-app-container {
-    margin: 36px auto;
     max-width: 1000px;
   }
 }
 
 @media (max-width: 1080px) {
   .whole-app-container {
-    margin: 36px auto;
     max-width: 700px;
   }
 }
 
 @media (max-width: 785px) {
   .whole-app-container {
-    margin: 36px auto;
     max-width: 500px;
+  }
+}
+
+@media (max-width: 550px) {
+  .whole-app-container {
+    max-width: 300px;
   }
 }
