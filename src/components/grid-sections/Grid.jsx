@@ -57,7 +57,7 @@ const Grid = ({ changeTheme, isDarkTheme, segmentOption }) => {
       <Project
         title='Published Game'
         projectImage={GamePicture}
-        projectPagePath='/dr-oil'
+        projectPagePath='/personal-website/dr-oil'
         projectLink='https://store.playstation.com/en-us/product/UP6537-CUSA32521_00-9855650559742112'
         technologiesIcons={[
           <FaUnity key={'unity'} title='Unity' />,
@@ -73,7 +73,7 @@ const Grid = ({ changeTheme, isDarkTheme, segmentOption }) => {
       <Project
         title='Stoicism History'
         projectImage={StoicismPicture}
-        projectPagePath='/stoicism-history'
+        projectPagePath='/personal-website/stoicism-history'
         projectLink='https://github.com/MY-NAME-IS-IVAN/Stoicism'
         technologiesIcons={[
           <FaReact key={'react'} title='React' />,
@@ -90,7 +90,7 @@ const Grid = ({ changeTheme, isDarkTheme, segmentOption }) => {
       <Project
         title='Mood Companion'
         projectImage={MoodCompanion}
-        projectPagePath='/mood-companion'
+        projectPagePath='/personal-website/mood-companion'
         isHorizontal={canBeHorizontal ? true : false}
         projectLink='https://t.me/mood_companion_bot'
         technologiesIcons={[
@@ -107,7 +107,7 @@ const Grid = ({ changeTheme, isDarkTheme, segmentOption }) => {
       <Project
         title='Dead Cells Website'
         projectImage={DeadCells}
-        projectPagePath='/dead-cells'
+        projectPagePath='/personal-website/dead-cells'
         isHorizontal={canBeHorizontal ? true : false}
         projectLink='https://github.com/MY-NAME-IS-IVAN/dead-cells-website-clone'
         technologiesIcons={[

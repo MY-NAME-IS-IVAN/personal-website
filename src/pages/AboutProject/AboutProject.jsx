@@ -29,7 +29,7 @@ const AboutProject = ({
 
   return (
     <div className='about-project-container'>
-      <Link to={'/'} className='back-button'>
+      <Link to={'/personal-website/'} className='back-button'>
         <MdNavigateNext />
       </Link>
       <div>

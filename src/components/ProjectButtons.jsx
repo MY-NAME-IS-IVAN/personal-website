@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const ProjectButtons = ({
   isHorizontal,
-  projectPagePath = '/',
+  projectPagePath = '/personal-website/',
   projectLink,
 }) => {
   return (

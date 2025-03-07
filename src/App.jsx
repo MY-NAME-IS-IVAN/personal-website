@@ -121,13 +121,13 @@ function App() {
     <div className='whole-app-container'>
       <Routes>
         <Route
-          path='/'
+          path='/personal-website/'
           element={<Home changeTheme={changeTheme} isDarkTheme={isDarkTheme} />}
         />
-        <Route path='/dr-oil' element={<PubishedGamePage />} />
-        <Route path='/stoicism-history' element={<StoicismHistoryPage />} />
-        <Route path='/dead-cells' element={<DeadCellsPage />} />
-        <Route path='/mood-companion' element={<MoodCompanionPage />} />
+        <Route path='personal-website/dr-oil' element={<PubishedGamePage />} />
+        <Route path='personal-website/stoicism-history' element={<StoicismHistoryPage />} />
+        <Route path='personal-website/dead-cells' element={<DeadCellsPage />} />
+        <Route path='personal-website/mood-companion' element={<MoodCompanionPage />} />
       </Routes>
     </div>
   );
